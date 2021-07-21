@@ -188,7 +188,7 @@ public:
 
 class RedBook
 {
-    Animal** AnimARR = new Animal * [6];
+    Animal** anime = new Animal * [6];
 public:
     RedBook();
     void sizeofR_B(int i);

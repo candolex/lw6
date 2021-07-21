@@ -286,55 +286,55 @@ void Hawk::Set_des(string t)
 RedBook::RedBook() {}
 void RedBook::sizeofR_B(int i)
 {
-    cout << sizeof * AnimARR[i];
+    cout << sizeof * anime[i];
     cout << endl;
-    cout << sizeof AnimARR[i];
+    cout << sizeof anime[i];
 
 }
 void RedBook::setR_B(int i, float a, string s, string t)
 {
     if (s == "Hawk")
     {
-        AnimARR[i] = new Hawk;
+        anime[i] = new Hawk;
     }
     else if (s == "Falcon")
     {
-        AnimARR[i] = new Falcon;
+        anime[i] = new Falcon;
     }
     else if (s == "Snake")
     {
-        AnimARR[i] = new Natrix;
+        anime[i] = new Natrix;
     }
     else if (s == "Viper")
     {
-        AnimARR[i] = new Viper;
+        anime[i] = new Viper;
     }
     else if (s == "Marten")
     {
-        AnimARR[i] = new Marten;
+        anime[i] = new Marten;
     }
     else if (s == "Cat")
     {
-        AnimARR[i] = new Cats;
+        anime[i] = new Cats;
     }
-    AnimARR[i]->Set_Pop(a);
-    AnimARR[i]->Set_name(s);
-    AnimARR[i]->Set_des(t);
+    anime[i]->Set_Pop(a);
+    anime[i]->Set_name(s);
+    anime[i]->Set_des(t);
 
 
 }
 
 void RedBook::Print(int i) {
 
-    AnimARR[i]->Print();
+    anime[i]->Print();
 
 }
 void RedBook::Print_class(string s) {
 
     for (int i = 0; i < 6; i++)
     {
-        if (s == AnimARR[i]->Get_Class())
-            AnimARR[i]->Print();
+        if (s == anime[i]->Get_Class())
+            anime[i]->Print();
     }
 
 }
@@ -343,38 +343,38 @@ void RedBook::Print_order(string s) {
     for (int i = 0; i < 6; i++)
     {
 
-        if (s == AnimARR[i]->Get_Order())
-            AnimARR[i]->Print();
+        if (s == anime[i]->Get_Order())
+            anime[i]->Print();
     }
 
 }
 void RedBook::Print_max() {
     float max; int j = 0;
-    max = AnimARR[0]->Get_Pop();
+    max = anime[0]->Get_Pop();
     for (int i = 1; i < 6; i++)
     {
-        if (max < AnimARR[i]->Get_Pop())
+        if (max < anime[i]->Get_Pop())
         {
             j = i;
-            max = AnimARR[i]->Get_Pop();
+            max = anime[i]->Get_Pop();
         }
     }
     cout << "\t\tThe largest population - \n";
-    AnimARR[j]->Print();
+    anime[j]->Print();
 }
 void RedBook::Print_min() {
     float min; int j = 0;
-    min = AnimARR[0]->Get_Pop();
+    min = anime[0]->Get_Pop();
     for (int i = 1; i < 6; i++)
     {
-        if (min > AnimARR[i]->Get_Pop())
+        if (min > anime[i]->Get_Pop())
         {
             j = i;
-            min = AnimARR[i]->Get_Pop();
+            min = anime[i]->Get_Pop();
         }
     }
     cout << "\t\tThe smallest population - \n";
-    AnimARR[j]->Print();
+    anime[j]->Print();
 }
 
-RedBook::~RedBook() { delete[] AnimARR; }
+RedBook::~RedBook() { delete[] anime; }
